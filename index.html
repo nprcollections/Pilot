@@ -36,70 +36,70 @@
         <h2>Our Sarees</h2>
         <div class="products">
             <div class="product-card">
-                <img src="Images/Saree1.JPG" alt="Red Banarasi Saree">
+                    <img src="Images/Saree1.JPG" alt="Red Banarasi Saree" class="expandable-img">
                 <h3>Saree1</h3>
-                <p>Description</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 1</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree2.JPG" alt="Blue Kanjivaram Saree">
+                <img src="Images/Saree2.JPG" alt="Blue Kanjivaram Saree" class="expandable-img">
                 <h3>Saree2</h3>
-                <p>Classic Kanjivaram silk saree with golden border.</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 2</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree3.JPG" alt="Green Linen Saree">
+                <img src="Images/Saree3.JPG" alt="Green Linen Saree" class="expandable-img">
                 <h3>Saree3</h3>
-                <p>Lightweight linen saree with modern prints for daily wear.</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 3</p>
+                <span class="price">$199</span>
             </div>
         </div>
         <div class="products">
             <div class="product-card">
-                <img src="Images/Saree4.JPG" alt="Red Banarasi Saree">
-                <h3>Saree1</h3>
-                <p>Description</p>
-                <span class="price">$99</span>
+                <img src="Images/Saree4.JPG" alt="Red Banarasi Saree" class="expandable-img">
+                <h3>Saree4</h3>
+                <p>Kanjivaram Silk Saree 4</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree5.JPG" alt="Blue Kanjivaram Saree">
-                <h3>Saree2</h3>
-                <p>Classic Kanjivaram silk saree with golden border.</p>
-                <span class="price">$99</span>
+                <img src="Images/Saree5.JPG" alt="Blue Kanjivaram Saree" class="expandable-img">
+                <h3>Saree5</h3>
+                <p>Kanjivaram Silk Saree 5</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree6.JPG" alt="Green Linen Saree">
-                <h3>Saree3</h3>
-                <p>Lightweight linen saree with modern prints for daily wear.</p>
-                <span class="price">$99</span>
+                <img src="Images/Saree6.JPG" alt="Green Linen Saree" class="expandable-img">
+                <h3>Saree6</h3>
+                <p>Kanjivaram Silk Saree 6</p>
+                <span class="price">$199</span>
             </div>
         </div>
         <div class="products">
             <div class="product-card">
-                <img src="Images/Saree7.JPG" alt="Red Banarasi Saree">
+                <img src="Images/Saree7.JPG" alt="Red Banarasi Saree" class="expandable-img">
                 <h3>Saree1</h3>
-                <p>Description</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 7</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree8.JPG" alt="Blue Kanjivaram Saree">
+                <img src="Images/Saree8.JPG" alt="Blue Kanjivaram Saree" class="expandable-img">
                 <h3>Saree2</h3>
-                <p>Classic Kanjivaram silk saree with golden border.</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 8</p>
+                <span class="price">$199</span>
             </div>
             <div class="product-card">
-                <img src="Images/Saree9.JPG" alt="Green Linen Saree">
+                <img src="Images/Saree9.JPG" alt="Green Linen Saree" class="expandable-img">
                 <h3>Saree3</h3>
-                <p>Lightweight linen saree with modern prints for daily wear.</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 9</p>
+                <span class="price">$199</span>
             </div>
         </div>
          <div class="products">
             <div class="product-card">
-                <img src="Images/Saree10.JPG" alt="Red Banarasi Saree">
+                <img src="Images/Saree10.JPG" alt="Red Banarasi Saree" class="expandable-img">
                 <h3>Saree1</h3>
-                <p>Description</p>
-                <span class="price">$99</span>
+                <p>Kanjivaram Silk Saree 10</p>
+                <span class="price">$199</span>
             </div>
         </div>
     </section>
@@ -133,5 +133,26 @@
     <footer>
         &copy; 2025 NPR Collections. All rights reserved.
     </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.expandable-img').forEach(img => {
+        img.addEventListener('click', function(e) {
+            // If already expanded, shrink
+            if (img.classList.contains('expanded')) {
+                img.classList.remove('expanded');
+                document.body.style.overflow = '';
+            } else {
+                // Remove expanded from any other image
+                document.querySelectorAll('.expandable-img.expanded').forEach(openImg => {
+                    openImg.classList.remove('expanded');
+                });
+                img.classList.add('expanded');
+                document.body.style.overflow = 'hidden'; // Prevent background scroll
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

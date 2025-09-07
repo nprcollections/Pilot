@@ -55,9 +55,8 @@ nav a:hover {
     width: 20vw;
     min-width: 150px;
     height: auto;
-    border-radius: 2px;
+    border-radius: 50%;
     box-shadow: 0 4px 24px rgba(0,0,0,0.09);
-    background: #fff;
     padding: 18px;
 }
 
@@ -111,6 +110,7 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 .product-card {
@@ -194,6 +194,33 @@ nav a:hover {
     text-align: center;
     margin-top: 1rem;
     color: #6d4c41;
+}
+
+.expandable-img {
+    cursor: zoom-in;
+    transition: 
+        transform 0.3s cubic-bezier(0.4,0,0.2,1),
+        box-shadow 0.3s,
+        z-index 0.3s;
+    z-index: 1;
+    position: relative;
+}
+
+.expandable-img.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 70vw;
+    max-width: 900px;
+    height: auto;
+    max-height: 80vh;
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 8px 40px 8px rgba(0,0,0,0.47);
+    background: #fff;
+    border-radius: 18px;
+    cursor: zoom-out;
+    z-index: 3000;
+    padding: 12px;
 }
 
 footer {
