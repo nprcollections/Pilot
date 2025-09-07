@@ -18,7 +18,8 @@ header {
 }
 
 .logo img {
-    height: 48px;
+    height: 80px; /* Increased from 48px for bigger header logo */
+    transition: height 0.2s;
 }
 
 nav a {
@@ -32,11 +33,38 @@ nav a:hover {
     color: #ff7043;
 }
 
+/* HERO SECTION WITH SIDE LOGO */
 .hero {
     background: url('saree-hero.jpg') center/cover, linear-gradient(to right, #ffe0b2cc, #fffde7cc);
     padding: 6rem 2vw 5rem 2vw;
-    text-align: center;
     color: #4e260e;
+}
+
+.hero-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.hero-logo img {
+    max-width: 300px;
+    width: 20vw;
+    min-width: 150px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    background: #fff;
+    padding: 18px;
+}
+
+.hero-content {
+    flex: 1 1 300px;
+    min-width: 250px;
+    text-align: left;
 }
 
 .hero-content h1 {
@@ -58,12 +86,16 @@ nav a:hover {
     font-weight: bold;
     font-size: 1rem;
     transition: background 0.2s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     background: #ff7043;
 }
 
+/* PRODUCT SECTION */
 .shop {
     padding: 3rem 2vw;
     background: #fff8f2;
@@ -110,6 +142,7 @@ nav a:hover {
     margin-top: 0.4rem;
 }
 
+/* ABOUT AND CONTACT SECTIONS */
 .about, .contact {
     padding: 2.5rem 2vw;
     background: #fff3e0;
@@ -172,6 +205,7 @@ footer {
     margin-top: 2rem;
 }
 
+/* RESPONSIVE DESIGN */
 @media (max-width: 900px) {
     .products {
         flex-direction: column;
@@ -179,5 +213,12 @@ footer {
     }
     .product-card {
         max-width: 96vw;
+    }
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        text-align: center;
     }
 }
